@@ -1,6 +1,7 @@
 library(rvest)
 library(purrr)
 library(magrittr)
+library(dplyr)
 library(fs)
 
 
@@ -14,12 +15,18 @@ urls = page %>%
   discard(is.na) %>%
   paste0(base_url, .)
 
-fs::dir_create("data/lq", recursive=TRUE)
 
+output_dir = "data/lq"
+fs::dir_create(output_dir, recursive=TRUE)
+
+
+p = dplyr::progress_estimated(length(urls))
 
 purrr::walk(
   urls,
   function(url) {
+    download.file(url, destfile = fs::path(output_dir, fs::path_file(url)), quiet = TRUE)
     
+    p$tick()$print()
   }
 )
