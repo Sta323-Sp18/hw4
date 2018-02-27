@@ -5,11 +5,8 @@ Homework 4 - La Quinta is Spanish for next to Denny's
 
 ### due Friday 3/09 by 11:59 pm
 
-<br/>
-<div style="text-align:center">
 ![Dennys next to La Quinta](http://www2.stat.duke.edu/~cr173/Sta323_Sp18/homework/imgs/hedberg.png)
-</div>
-<br/>
+
 
 ## Background
 
