@@ -1,8 +1,12 @@
+if (!"fs" %in% row.names(installed.packages()))
+  install.packages("fs", repos = "https://cran.rstudio.com/")
+
 library(rvest)
 library(purrr)
 library(magrittr)
 library(dplyr)
 library(fs)
+
 
 
 base_url = "http://www2.stat.duke.edu/~cr173/lq/www.lq.com/en/findandbook/"

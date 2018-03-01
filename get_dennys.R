@@ -1,3 +1,7 @@
+if (!"fs" %in% row.names(installed.packages()))
+  install.packages("fs", repos = "https://cran.rstudio.com/")
+
+
 library(rvest)
 library(fs)
 
