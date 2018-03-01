@@ -22,6 +22,8 @@ fs::dir_create(output_dir, recursive=TRUE)
 
 p = dplyr::progress_estimated(length(urls))
 
+urls = urls[1:100]
+
 purrr::walk(
   urls,
   function(url) {

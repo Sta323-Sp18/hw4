@@ -7,8 +7,8 @@ Homework 4 - [Your team name here]
 <!-- Detail your approach for scraping La Quinta's data -->
 
 ```{r}
-load("data/dennys.Rdata")
-load("data/lq.Rdata")
+readRDS("data/dennys.rds")
+readRDS("data/lq.rds")
 ```
 
 

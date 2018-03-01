@@ -12,7 +12,7 @@ df = map_df(
   function(file) {
    page = read_html(file)
    print(page)
-   
+  
    data.frame()
   }
 )
