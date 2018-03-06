@@ -56,4 +56,21 @@ lq = data.frame(
   Longitude = runif(900),
   Latitude = runif(900)
 )
+
+d = fields::rdist(dennys, lq)
+str(fields::rdist(dennys, lq))
+
+# For each dennys what is the nearest lq
+dennys_min = apply(d, 1, min)
+apply(d, 1, which.min)
+
+
+# For each lq what is the nearest dennys
+lq_min = apply(d, 2, min)
+apply(d, 2, which.min)
+
+
+plot(density(dennys_min))
+plot(ecdf(dennys_min))
+plot(ecdf(lq_min), add=TRUE, col="blue")
 ```
