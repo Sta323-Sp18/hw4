@@ -26,4 +26,34 @@ readRDS("data/lq.rds")
 <!-- Detail your statistical analysis of the pairwise distance between Denny's and LQ's-->
 
 ```{r}
+library(ggplot2)
+set.seed(123)
+
+d = data.frame(
+  Longitude = jitter(c(c(0.25,0.75,0.25,0.75),c(0.25,0.25,0.25,0.75))),
+  Latitude  = jitter(c(c(0.25,0.75,0.25,0.75),c(0.25,0.25,0.25,0.75))),
+  Chain     = rep(rep(c("Denny's","La Quinta"),c(2,2)),2),
+  Example   = rep(c("Same","Different"), c(4,4)),
+  stringsAsFactors = FALSE
+)
+
+ggplot(data = d,aes(x = Longitude, y = Latitude, col = Chain))+
+  geom_point(size = 3) + 
+  facet_grid(. ~ Example) +
+  theme(axis.ticks = element_blank(), axis.text = element_blank()) +
+  xlim(0.1,0.9) +
+  ylim(0.1,0.9)
+```
+
+
+```{r}
+dennys = data.frame(
+  Longitude = runif(1000),
+  Latitude = runif(1000)
+)
+
+lq = data.frame(
+  Longitude = runif(900),
+  Latitude = runif(900)
+)
 ```
